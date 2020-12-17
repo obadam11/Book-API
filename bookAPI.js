@@ -12,7 +12,7 @@ const rl = readline.createInterface({
 });
 
 rl.question("Search: ", (searchingString) => {
-  fetch('https://www.googleapis.com/books/v1/volumes?q=' +  searchingString + ':keyes&key=' + APIKey)
+  fetch('https://www.googleapis.com/books/v1/volumes?q=' +  searchingString.toString() + ':keyes&key=' + APIKey)
   .then(response => response.json())
   .then(data => {
     representData(data);
