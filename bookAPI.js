@@ -1,14 +1,27 @@
 const fetch = require('node-fetch');
 const dotenv = require("dotenv");
+const readline = require('readline');
+
 dotenv.config();
 const APIKey = process.env.GOOGLE_BOOKS_API_KEY;
-let searchingString = "Engnieering";
-fetch('https://www.googleapis.com/books/v1/volumes?q=' +  searchingString + ':keyes&key=' + APIKey)
+
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+rl.question("Search: ", (searchingString) => {
+  fetch('https://www.googleapis.com/books/v1/volumes?q=' +  searchingString + ':keyes&key=' + APIKey)
   .then(response => response.json())
   .then(data => {
     representData(data);
   })
   .catch(err => console.log(err))
+
+  rl.close();
+})
+
 
 const representData = (data) => {
     console.log("We found " + data.items.length + " books");
@@ -25,9 +38,9 @@ const representData = (data) => {
     }
 }
 
-fetch('https://www.googleapis.com/books/v1/volumes?q=' +  searchingString + ':keyes&key=AIzaSyBQd2F1Vk5IxLypfOlXG6LXKcPAVrYep3E')
-  .then(response => response.json())
-  .then(data => {
-    representData(data);
-  })
-  .catch(err => console.log(err))
+// fetch('https://www.googleapis.com/books/v1/volumes?q=' +  searchingString + ':keyes&key=AIzaSyBQd2F1Vk5IxLypfOlXG6LXKcPAVrYep3E')
+//   .then(response => response.json())
+//   .then(data => {
+//     representData(data);
+//   })
+//   .catch(err => console.log(err))
