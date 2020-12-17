@@ -1,6 +1,5 @@
 const fetch = require('node-fetch');
 const dotenv = require("dotenv");
-// AIzaSyBQd2F1Vk5IxLypfOlXG6LXKcPAVrYep3E
 dotenv.config();
 const APIKey = process.env.GOOGLE_BOOKS_API_KEY;
 let searchingString = "Engnieering";
