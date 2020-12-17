@@ -1,0 +1,23 @@
+{
+  "name": "bookApp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bookAPI.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/obadam11/Book-API.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/obadam11/Book-API/issues"
+  },
+  "homepage": "https://github.com/obadam11/Book-API#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0"
+  }
+}
